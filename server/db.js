@@ -1,12 +1,12 @@
 const {Sequlize} = require('sequelize')
 
 
-// Имя базы данных
-// Пользователь который владеет БД
-// Пароль к БД
-// Адрес хоста
-// Порт БД
-
 module.exports = new Sequlize(
-    
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD, {
+        dialect: 'postgres',
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT
+    }
 )
