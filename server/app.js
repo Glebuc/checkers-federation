@@ -1,13 +1,16 @@
 const express = require('express')
+const router = require('./router/index')
 
 const app = express()
 
 
 const port = 3000
 
-app.get('/', (req, res) => { //get-получить
-  res.send('Hello World!')
-})
+
+app.use('/api', router)
+
+
+
 
 app.listen(port, () => {
   console.log(`Сервер запущен по адресу http://localhost:${port}`)
